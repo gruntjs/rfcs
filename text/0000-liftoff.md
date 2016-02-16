@@ -1,5 +1,5 @@
 - Feature Name: liftoff
-- Start Date: (fill me in with today's date, YYYY-MM-DD)
+- Start Date: 2016-02-15
 - RFC PR: (leave this empty)
 - Grunt Issue: (leave this empty)
 
