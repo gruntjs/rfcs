@@ -51,6 +51,19 @@ v8flags(function (err, v8flags) {
 This will support Gruntfiles in a number of languages, including CoffeeScript,
 Babel, TypeScript, LiveScript, JSX and many more: https://github.com/js-cli/js-interpret/blob/master/index.js#L96
 
+---
+
+An example if a user wishes to use Babel:
+
+```shell
+npm install babel-core babel-preset-es2015 --save-dev
+```
+
+Then create a `.babelrc` file with the preset and a `Gruntfile.babel.js`. Then
+the Gruntfile will use babel and the specified presets.
+
+---
+
 If a language is not natively supported a user can do:
 
 ```shell
@@ -61,7 +74,8 @@ grunt --require custom-lang/register
 # Drawbacks
 [drawbacks]: #drawbacks
 
-* Takes away CLI options from users.
+* ~~Takes away CLI options from users.~~  
+  Only if implemented with `argv`, `process.env` might be an alternative if a problem.
 
 # Alternatives
 [alternatives]: #alternatives
@@ -71,4 +85,5 @@ grunt --require custom-lang/register
 # Unresolved questions
 [unresolved]: #unresolved-questions
 
-* In doing this, which parts are not backwards compatible?
+* ~~In doing this, which parts are not backwards compatible?~~  
+  None known at this time.
