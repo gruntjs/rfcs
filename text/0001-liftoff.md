@@ -71,6 +71,10 @@ npm install custom-lang
 grunt --require custom-lang/register
 ```
 
+---
+
+The current known Grunt options are: https://github.com/gruntjs/grunt-known-options
+
 # Drawbacks
 [drawbacks]: #drawbacks
 
