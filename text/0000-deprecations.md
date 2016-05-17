@@ -6,7 +6,8 @@
 # Summary
 [summary]: #summary
 
-Create a deprecation API and mark all the APIs in Grunt 1.x.x that are deprecated.
+Create a private deprecation API and mark all the APIs in Grunt 1.x.x that are
+deprecated.
 
 # Motivation
 [motivation]: #motivation
@@ -21,7 +22,8 @@ deprecated API and logs a message informing the end user.
 A tool to mark an API as deprecated could be:
 
 ```js
-grunt.deprecate(grunt.util._.str, 'grunt.util._ has been deprecated. Please use lodash directly: https://gruntjs.com/migration-guide#lodash');
+var deprecate = require('./lib/deprecate.js');
+deprecate(grunt.util, '_', 'grunt.util._ has been deprecated. Please use lodash directly: https://gruntjs.com/migration-guide#lodash');
 ```
 
 Then if any plugin or Gruntfile uses that API, it will log the message:
@@ -38,14 +40,26 @@ release. Deprecations can be added on minor versions.
 
 ### Disable Deprecation Notices
 
-All deprecation notifications can be disabled with a flag:
+All deprecation notifications can be disabled with a cli flag:
 
+```shell
+grunt foo --no-deprecations
+```
+
+Or within a Gruntfile:
 ```js
-grunt.deprecate.disable = true;
+grunt.option('deprecations', false);
 ```
 
 For users not ready to fix the deprecations or annoyed by deprecation messages
 originating from other plugins they cannot yet easily resolve.
+
+### Deprecation Release Strategy
+
+* `0.x.0` - Deprecation warnings should be added on minor versions as they are
+new "features" that are backwards compatible.
+* `x.0.0` - Removal of warned deprecations are done on major versions, as they
+are "features" that break backwards compatibility.
 
 ### 1.x.x Deprecations
 
@@ -86,7 +100,4 @@ in `2.x.x`:
 # Unresolved questions
 [unresolved]: #unresolved-questions
 
-* Easier way to deprecate every function on `grunt.util._.*` and `grunt.util.async.*`
-  without having to list every function?
 * Any more APIs we should deprecate? Any less?
-* Should this be a private Grunt API?
