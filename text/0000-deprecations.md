@@ -32,9 +32,6 @@ Then if any plugin or Gruntfile uses that API, it will log the message:
 WARN: grunt.util._ has been deprecated. Please use lodash directly: https://gruntjs.com/migration-guide#lodash
 ```
 
-These warnings will persist until the API is removed in the next major version
-release. Deprecations can be added on minor versions.
-
 > Would be nice to display the file location and line the deprecation originated
 > from as well.
 
