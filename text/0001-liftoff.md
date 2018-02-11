@@ -1,6 +1,6 @@
 - Feature Name: liftoff
 - Start Date: 2016-02-15
-- RFC PR: (leave this empty)
+- RFC PR: [https://github.com/gruntjs/grunt-cli/pull/117](https://github.com/gruntjs/grunt-cli/pull/117)
 - Grunt Issue: (leave this empty)
 
 # Summary
