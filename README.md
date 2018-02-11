@@ -13,7 +13,7 @@ and controlled path for new features to enter the codebase.
 
 ## Active RFC List
 
-* None at this time.
+* [0001-liftoff.md](text/0001-liftoff.md)
 
 ## When you need to follow this process
 
