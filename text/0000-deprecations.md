@@ -67,20 +67,25 @@ in `2.x.x`:
 * All functions on `grunt.util.async`
 * All functions on `grunt.util.namespace`
 * All functions on `grunt.util.hooker`
-* `grunt.util.spawn`
 * `grunt.util.exit`
-* `grunt.util.callbackify`
-* `grunt.util.kindOf`
 * `grunt.util.toArray`
 * `grunt.util.repeat`
-* `grunt.util.pluralize`
-* `grunt.util.recurse`
 * All functions on `grunt.file.glob`
 * All functions on `grunt.file.minimatch`
 * All functions on `grunt.file.findup`
 * `grunt.file.readYAML`
 * `grunt.file.readJSON`
 * All functions on `grunt.event`
+
+APIs we should deprecate but without a simple alternative:
+
+* `grunt.util.spawn`
+* `grunt.util.callbackify`
+* `grunt.util.kindOf`
+* `grunt.util.pluralize`
+* `grunt.util.recurse`
+
+We should provide documentation with an alternative implementation.
 
 # Drawbacks
 [drawbacks]: #drawbacks
