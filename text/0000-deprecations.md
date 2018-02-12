@@ -1,6 +1,6 @@
 - Feature Name: deprecations
 - Start Date: 2016-02-15
-- RFC PR: (leave this empty)
+- RFC PR: [https://github.com/gruntjs/grunt/pull/1625](https://github.com/gruntjs/grunt/pull/1625)
 - Grunt Issue: (leave this empty)
 
 # Summary
