@@ -22,30 +22,30 @@ deprecated API and logs a message informing the end user.
 A tool to mark an API as deprecated could be:
 
 ```js
-var deprecate = require('./lib/deprecate.js');
-deprecate(grunt.util, '_', 'grunt.util._ has been deprecated. Please use lodash directly: https://gruntjs.com/migration-guide#lodash');
+var deprecate = require('./lib/grunt/deprecate.js');
+deprecate(grunt.util, '_', 'grunt.util._ has been deprecated. Please use "lodash" directly: https://gruntjs.com/migration-guide#lodash');
 ```
 
 Then if any plugin or Gruntfile uses that API, it will log the message:
 
 ```shell
-WARN: grunt.util._ has been deprecated. Please use lodash directly: https://gruntjs.com/migration-guide#lodash
+>> grunt.util._ has been deprecated. Please use lodash directly: https://gruntjs.com/migration-guide#lodash
 ```
 
-> Would be nice to display the file location and line the deprecation originated
-> from as well.
+If `--stack` is provide, it will display a stack trace to located where the
+deprecated API.
 
 ### Disable Deprecation Notices
 
 All deprecation notifications can be disabled with a cli flag:
 
 ```shell
-grunt foo --no-deprecations
+grunt foo --hide-deprecations
 ```
 
 Or within a Gruntfile:
 ```js
-grunt.option('deprecations', false);
+grunt.option('hide-deprecations', true);
 ```
 
 For users not ready to fix the deprecations or annoyed by deprecation messages
